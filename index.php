@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google font link -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
     <title>Php-Quiz</title>
 </head>
 <body>
+<h1>Welcome to my quiz</h1>
+<hr class="line">
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
 <?php
 $quiz[] = [
-    'question' => 'what is the largest living animal',
+    'question' => 'what is the largest living animal?',
     'answer' => [
         'elephant',
         'blue_whale',
@@ -21,7 +26,7 @@ $quiz[] = [
 
 ];
 $quiz[] = [
-    'question' => 'Against which illness do you use insuline',
+    'question' => 'Against which illness do you use insulin?',
     'answer' => [
         'high_blood_pressure',
         'adiposity',
@@ -62,7 +67,7 @@ $quiz[] = [
 
 ];
 $quiz[] = [
-    'question' => 'which is the longest river in the world' ,
+    'question' => 'which is the longest river in the world?' ,
     'answer' => [
         'nil',
         'congo',
@@ -111,7 +116,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'What is the national animal of China?'
+    'question' => 'What is the national animal of China?',
     'answer' => [
         'leopard',
         'ELephant',
@@ -120,7 +125,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'What is the noisiest city in the world?'
+    'question' => 'What is the noisiest city in the world?',
     'answer' => [
         'siberia',
         'johannesburg',
@@ -129,7 +134,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'How many time zones are there in the world?'
+    'question' => 'How many time zones are there in the world?',
     'answer' => [
         '12',
         '48',
@@ -138,7 +143,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'Which is the largest desert on earth?'
+    'question' => 'Which is the largest desert on earth?',
     'answer' => [
         'kalahari',
         'Sonoran',
@@ -147,7 +152,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'What is the second largest country in Europe after Russia?'
+    'question' => 'What is the second largest country in Europe after Russia?',
     'answer' => [
         'France',
         'Spain',
@@ -156,7 +161,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'What is the largest city in Canada?'
+    'question' => 'What is the largest city in Canada?',
     'answer' => [
         'Montreal',
         'Quebec',
@@ -165,7 +170,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'In which country were the first Olympic Games held?'
+    'question' => 'In which country were the first Olympic Games held?',
     'answer' => [
         'Greece',
         'Italy',
@@ -174,7 +179,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'How long is an Olympic swimming pool?'
+    'question' => 'How long is an Olympic swimming pool?',
     'answer' => [
         '60 meters',
         '30 meters',
@@ -183,7 +188,7 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'How many stars has the American flag got?'
+    'question' => 'How many stars has the American flag got?',
     'answer' => [
         '30',
         '40',
@@ -192,16 +197,84 @@ $quiz[] = [
     ]
 ];
 $quiz[] = [
-    'question' => 'How long is the Great Wall of China?'
+    'question' => 'How long is the Great Wall of China?',
     'answer' => [
         '6000 miles',
         '5000 miles',
         '4000 miles',
         '3000 miles'
     ]
-]
+];
+$answerName = array('question1','question2','question3','question4','question5','question6','question7','question8','question9','question10','question11','question12','question13','question14','question15','question16','question17','question18','question19','question20');
+$number = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20');
 
+for($i = 0; $i < count($quiz); ++$i){
+    $outputquestion = "<h3>".$number[$i].')'.$quiz[$i]['question']."</h3>";
+    echo $outputquestion;
+
+    foreach($quiz[$i]['answer'] as $value ){
+        $outputanswer =  "<input required type=\"radio\" name=".$answerName[$i]." 
+        value=".$value.">"."<span>$value</span>";
+        echo $outputanswer;
+        }
+
+
+}
+// isset check if the superglobal variable have been populated
+if(isset($_POST['submit'])){
+    $score = 0;
+    
+if($_POST['question1'] == 'blue_whale' ){
+    $score++;
+    
+    }
+    
+    if($_POST['question2'] == 'diabetes' ){
+    $score++;
+    
+    }
+    
+    if($_POST['question3'] == 'New_york' ){
+     $score++;   
+    
+    }
+    if($_POST['question4'] == 'electronic' ){
+        $score++;   
+       
+    }
+    if($_POST['question5'] == '71%'){ 
+        $score++;   
+       
+    }
+    if($_POST['question6'] == 'amazon'){ 
+        $score++;   
+       
+    }
+    if($_POST['question7'] == '28-32'){ 
+        $score++;   
+       
+    }
+    if($_POST['question8'] == 'Chareles Darwin'){ 
+        $score++;   
+       
+    }
+    if($_POST['question9'] == 'Shark'){ 
+        $score++;   
+       
+    }
+    if($_POST['question10'] == '60'){ 
+
+    }
+    if($_POST['question11'] == 'Giant Panda'){
+        $score++;
+    }
+    if($_POST['question12'] == 'Hong kong'){
+        $score++;
+    }
+}
 ?>
+<br>
+<input id="input" type="submit" name="submit">
 </form>
 
 </body>
