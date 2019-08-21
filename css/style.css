@@ -1,6 +1,11 @@
+body{
+    background-image: url(https://fsa.zobj.net/crop.php?r=2pDtthTLsQZWAUOznkRsz4GqouSf3nBEOWK3nqTcIpCSNWMWEJhkJZNMj3vy38Mi8icNEtQVv_ZlgNXJveBMDojE8nWFzBGroN_GB_Mdfs7819Pdmya7O6MHp3i_Bore-lRidg2tSgSZb3fV_0z8QhAFCfiYiQyAGcNAWohEhsNyg71AgFX_8G60Sxs);
+    background-size:cover
+}
 h1{
     text-align: center;
     font-family: 'Bitter', serif;
+    color: white;
 }
 /* google font */
 @import url('https://fonts.googleapis.com/css?family=Bitter|Dancing+Script&display=swap');
@@ -23,5 +28,8 @@ input{
 p{
     margin: 5px;
     font-size: 1.2em;
-    
 }
+span{
+    color:white;
+    }
+

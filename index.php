@@ -12,7 +12,7 @@
 <body>
 <h1>Welcome to my quiz</h1>
 <hr class="line">
-<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
 <?php
 error_reporting(E_ALL);
@@ -214,7 +214,7 @@ for($i = 0; $i < count($quiz); ++$i){
     echo $outputquestion;
 
     foreach($quiz[$i]['answer'] as $value ){
-        $outputanswer =  "<input required type=\"radio\" name=".$answerName[$i]." 
+        $outputanswer =  "<input id=\"input\" required type=\"radio\" name=".$answerName[$i]." 
         value=".$value.">"."<span>$value</span>";
         echo $outputanswer;
         }
@@ -224,7 +224,7 @@ for($i = 0; $i < count($quiz); ++$i){
 // isset check if the superglobal variable have been populated
 if(isset($_POST['submit'])){
     $score = 0;
-    
+// the rest of the if statements increment the variable $score if the condition is match    
 if($_POST['question1'] == 'blue_whale' ){
     $score++;
     
