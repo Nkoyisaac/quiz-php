@@ -15,6 +15,7 @@
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 
 <?php
+error_reporting(E_ALL);
 $quiz[] = [
     'question' => 'what is the largest living animal?',
     'answer' => [
@@ -263,15 +264,52 @@ if($_POST['question1'] == 'blue_whale' ){
        
     }
     if($_POST['question10'] == '60'){ 
+     $score++;
 
     }
     if($_POST['question11'] == 'Giant Panda'){
         $score++;
+
     }
     if($_POST['question12'] == 'Hong kong'){
         $score++;
+
     }
+    if($_POST['question13'] == '24'){
+        $score++;
+
+    }
+    if($_POST['question14'] == 'Sahara' ){
+        $score++;
+
+    }
+    if($_POST['question15'] == 'France'){
+        $score++;
+
+    }
+    if($_POST['question16'] == 'Toronto'){
+        $score++;
+
+    }
+    if($_POST['question17'] == 'Greece'){
+        $score++;
+
+    }
+    if($_POST['question18'] == '50 meters'){
+        $socre++;
+
+    }
+    if($_POST['question19'] == '50'){
+        $score++;
+
+    }
+    if($_POST['question20'] == '5000 miles'){
+        $score++;
+        
+    }
+    echo "<br>"."<p>"."Your score is ".$score."/20"."</p>";
 }
+
 ?>
 <br>
 <input id="input" type="submit" name="submit">
