@@ -27,7 +27,10 @@ input{
 }
 p{
     margin: 5px;
-    font-size: 1.2em;
+    font-size: 2em;
+    color: white;
+     font-family: 'Bitter', serif;
+    font-family: 'Dancing Script', cursive;
 }
 span{
     color:white;
